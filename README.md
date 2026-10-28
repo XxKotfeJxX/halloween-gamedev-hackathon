@@ -1,5 +1,7 @@
 # Halloween Gamedev Hackathon
 
+🌐 **[Відкрити сайт](https://xxkotfejxx.github.io/halloween-gamedev-hackathon/)**
+
 Готовий статичний сайт українською. Збірка й встановлення пакетів не потрібні.
 
 - `dist/index.html` — головна сторінка. Для хостингу завантажте всю папку `dist`.
