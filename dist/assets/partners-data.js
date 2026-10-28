@@ -43,12 +43,6 @@ window.HALLOWEEN_PARTNERS = [
     "logoSurface": "light"
   },
   {
-    "name": "Мальопус",
-    "logo": "assets/partners/malopus.webp",
-    "href": "https://malopus.com.ua/",
-    "logoSurface": "light"
-  },
-  {
     "name": "EPAM",
     "logo": "assets/partners/epam-dark.svg",
     "href": "https://www.epam.com/",
