@@ -52,7 +52,8 @@ window.HALLOWEEN_PARTNERS = [
     "name": "EPAM",
     "logo": "assets/partners/epam-dark.svg",
     "href": "https://www.epam.com/",
-    "logoClass": "partner-logo-wide"
+    "logoClass": "partner-logo-wordmark",
+    "hideName": true
   },
   {
     "name": "Lionwood Software",
@@ -65,6 +66,7 @@ window.HALLOWEEN_PARTNERS = [
     "name": "DataArt",
     "logo": "assets/partners/dataart-white.svg",
     "href": "https://www.dataart.com/",
-    "logoClass": "partner-logo-wide"
+    "logoClass": "partner-logo-wordmark partner-logo-dataart",
+    "hideName": true
   }
 ];
