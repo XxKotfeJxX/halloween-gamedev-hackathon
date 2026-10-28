@@ -6,7 +6,7 @@
   const li=document.createElement('li');li.className='partner-entry';
   const a=document.createElement(p.href?'a':'div');a.className='partner-card';
   if(p.href){a.href=p.href;if(!p.href.startsWith('#')){a.target='_blank';a.rel='noopener noreferrer';}}
-  const logo=document.createElement('span');logo.className='partner-logo';
+  const logo=document.createElement('span');logo.className='partner-logo'+(p.logoSurface==='light'?' partner-logo-surface':'');
   if(p.logo){const img=document.createElement('img');img.src=p.logo;img.className=p.logoClass||'';img.alt='';img.loading='lazy';img.decoding='async';img.draggable=false;logo.append(img);img.addEventListener('error',()=>{img.remove();logo.textContent=p.wordmark||p.name;logo.classList.add('partner-wordmark');},{once:true});}
   else if(p.emblem==='event'){logo.innerHTML='<svg class="event-emblem" viewBox="0 0 60 60" aria-hidden="true"><use href="#pumpkin-mark"/></svg>';}
   else{const word=document.createElement('span');word.className='partner-wordmark';word.textContent=p.wordmark||p.name;word.setAttribute('aria-hidden','true');logo.append(word);}

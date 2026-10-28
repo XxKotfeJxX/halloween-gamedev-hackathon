@@ -1,0 +1,39 @@
+name: Update static exports
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'dist/index.html'
+      - 'dist/assets/**'
+      - 'scripts/export-standalone.py'
+      - '.github/workflows/update-static-export.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: static-exports
+  cancel-in-progress: false
+
+jobs:
+  export:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          ref: main
+      - name: Update partner fallback and standalone page
+        run: python3 scripts/export-standalone.py
+      - name: Commit generated pages when changed
+        run: |
+          git add dist/index.html dist/standalone.html
+          if git diff --cached --quiet; then
+            exit 0
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git commit -m "Regenerate partner fallback and standalone page"
+          git push origin HEAD:main

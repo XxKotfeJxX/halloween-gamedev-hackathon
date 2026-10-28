@@ -9,7 +9,7 @@
 
 ## Організатори та партнери
 
-Поточний порядок: prof_IKNI, кафедра систем віртуальної реальності НУЛП, Ігровари, tsukat. Кафедру АСУ вилучено за уточненням організатора. GSC Game World та Octopus не додані: участь ще не підтверджена.
+Поточний порядок: prof_IKNI, кафедра систем віртуальної реальності НУЛП, Ігровари, tsukat, Майстерня Рольовика, Хобі Монстр, Дайс Кон, Мальопус, EPAM, Lionwood Software, DataArt. Сім нових учасників погоджено користувачем 28.10.2026 для додавання на GitHub. Кафедру АСУ вилучено за уточненням організатора. GSC Game World та Octopus не додані: участь ще не підтверджена.
 
 Щоб додати учасника, додайте об’єкт у `window.HALLOWEEN_PARTNERS`:
 
@@ -17,13 +17,27 @@
 { name: 'Назва', logo: 'assets/partners/logo.svg', href: 'https://example.com/' }
 ```
 
-Без логотипа можна вказати `wordmark: 'Назва'`. Для кафедр є `kind: 'department'`. До шести учасників включно показується компактна сітка; більша кількість автоматично вмикає горизонтальну стрічку зі стрілками, свайпом та клавішами Left/Right/Home/End. Автогортання немає. Нуль учасників приховує розділ. На телефоні сітка має дві колонки, остання непарна картка центрована.
+Без логотипа можна вказати `wordmark: 'Назва'`. Для кафедр є `kind: 'department'`. Для темного логотипа додайте `logoSurface: 'light'`, щоб отримати невелику світлу підкладку; для компактного SVG-вордмарка — `logoClass: 'partner-logo-wide'`. До шести учасників включно показується компактна сітка; більша кількість автоматично вмикає горизонтальну стрічку зі стрілками, свайпом та клавішами Left/Right/Home/End. Автогортання немає. Нуль учасників приховує розділ. На телефоні сітка має дві колонки, остання непарна картка центрована.
 
-HTML містить початковий список також для випадку вимкненого JavaScript. Після зміни списку оновіть цей резервний список у `index.html` та перегенеруйте автономну сторінку командою `python3 scripts/export-standalone.py`.
+Єдине джерело списку — `dist/assets/partners-data.js`. Додайте або видаліть об’єкт у цьому файлі; для нового логотипа покладіть файл у `dist/assets/partners/`. Звичайний сайт підхоплює зміни автоматично. Після коміту в `main` GitHub Actions оновлює резервний HTML для вимкненого JavaScript та `dist/standalone.html` і зберігає їх окремим комітом. Дочекайтеся зеленого статусу **Update static exports** перед завантаженням ZIP. Вручну дублювати список у HTML не потрібно. Локально ту саму синхронізацію запускає `python3 scripts/export-standalone.py` (потрібні Python 3.9+ та Node.js; зовнішніх пакетів немає). Це оновлення файлів репозиторію; для зовнішнього хостингу потрібен його звичайний деплой.
 
 Логотип Ігроварів взятий із наданого Brand Kit: https://goto.ihrovary.in.ua/brandkit. Логотип ВР — з https://xr.net.ua/images/logo-dark-bg.svg. Посилання tsukat: https://tsukat.com/.
 
 Логотип prof_IKNI наданий організатором; використовується оригінальний PNG із заокругленням кутів через CSS. Картка веде на https://www.instagram.com/prof_ikni/ (профіль підтверджений посиланням з офіційної сторінки інституту https://lpnu.ua/ikni/kolehiia-ta-profbiuro-studentiv-instytutu). Офіційний SVG tsukat взятий із шапки https://tsukat.com/ — https://tsukat.com/wp-content/uploads/2024/07/logo.svg. Монохромний логотип показаний білим на темному тлі через CSS-фільтр, файл SVG збережено без змін. Пропорції брендових зображень збережено.
+
+### Джерела погоджених логотипів
+
+Оригінальні файли збережені без зміни кольорів і пропорцій. Майстерня Рольовика веде на офіційний Linktree; окремий сайт не підтверджений. Хобі Монстр і Мальопус використовують растрові логотипи із шапок своїх сайтів.
+
+| Назва | Сайт | Логотип |
+| --- | --- | --- |
+| Майстерня Рольовика | https://linktr.ee/rolplayer_workshop | [Оригінал](https://ugc.production.linktr.ee/1d24fa4a-1593-42e9-afa9-ac64cb42312e_.png) |
+| Хобі Монстр | https://hobymonster.com.ua/ | [Оригінал](https://hobymonster.com.ua/content/images/2/200x93l90nn0/34856467063777.webp) |
+| Дайс Кон / Dice Con | https://www.dicecon.fun/ | [Оригінал](https://www.dicecon.fun/wp-content/uploads/2023/07/dicecon_logo.svg) |
+| MAL’OPUS / Мальопус | https://malopus.com.ua/ | [Оригінал](https://malopus.com.ua/content/images/2/200x100l90nn0/83564652112538.webp) |
+| EPAM | https://www.epam.com/ | [Оригінал](https://www.epam.com/content/dam/epam/2023/epam.svg) |
+| Lionwood Software | https://lionwood.software/ | [Оригінал](https://media.lionwood.software/uploads/2026/05/footer_logo.svg) |
+| DataArt | https://www.dataart.com/ | [Оригінал](https://websitesapi.dataart.com/media/zinlfeet/dataart-logo-white-rgb.svg) |
 
 ## Вигляд і рух
 
