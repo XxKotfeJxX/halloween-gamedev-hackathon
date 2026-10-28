@@ -1,0 +1,20 @@
+/* Registered PNG layers: candle light and CRT interference have independent clocks. */
+.mascot-rig{position:relative;aspect-ratio:2/3;width:100%;max-width:400px;margin-inline:auto;animation:haunt 6s ease-in-out infinite;filter:drop-shadow(10px 22px 0 #070a0735)}
+.rig-layer{position:absolute;inset:0;width:100%;height:100%;object-fit:contain;pointer-events:none}
+.pumpkin-dark{z-index:1}.pumpkin-lit{z-index:2;animation:candle-light 8.3s steps(1,end) infinite}.computer-base{z-index:3}
+.crt-screen{position:absolute;z-index:4;left:44.5%;top:54.3%;width:34%;height:18.3%;transform:matrix(1,.18,-.03,1,0,0);transform-origin:0 0;overflow:hidden;border-radius:9%;mix-blend-mode:screen;opacity:.91;isolation:isolate}
+.crt-screen:before{content:'';position:absolute;z-index:3;inset:0;background:repeating-linear-gradient(0deg,#0008 0px,#0008 1px,transparent 1px,transparent 3px);opacity:.45;pointer-events:none}
+.crt-screen:after{content:'';position:absolute;inset:0;z-index:4;background:repeating-linear-gradient(0deg,transparent 0 5px,#f4af5870 6px 7px,transparent 8px 15px,#f7c881b0 15px 17px);mix-blend-mode:screen;opacity:0;animation:crt-static 11.7s steps(1,end) infinite}
+.screen-skull{position:absolute;left:18%;top:10%;width:65%;height:76%;object-fit:contain;image-rendering:pixelated;filter:drop-shadow(0 0 6px #ef6a252c);animation:crt-skull 11.7s steps(1,end) infinite}
+.scan-beam{position:absolute;width:100%;height:3px;left:0;top:-5%;background:#f6ae7450;box-shadow:0 0 9px #ed932850;animation:scan-roll 4.8s linear infinite;opacity:.7}
+@keyframes candle-light{0%,67%,72%,100%{opacity:1}68%{opacity:.3}69%{opacity:0}70%{opacity:1}71%{opacity:0}88%{opacity:1}89%{opacity:.45}90%{opacity:1}}
+@keyframes crt-skull{0%,79%,86%,100%{transform:none;filter:drop-shadow(0 0 6px #ef6a252c);opacity:.94}80%{transform:translateX(11%) skewX(9deg);filter:drop-shadow(-6px 0 #b8d979);opacity:.8}81%{transform:translateX(-9%) scaleY(.94);filter:drop-shadow(7px 0 #fa451a)}82%{transform:translateY(3%);opacity:.2}83%{transform:translateX(6%) skewX(-5deg);opacity:1}84%{transform:translateX(-5%);opacity:.65}85%{transform:none;opacity:.1}}
+@keyframes crt-static{0%,79%,86%,100%{opacity:0;transform:none}80%{opacity:.6;transform:translateY(15%)}81%{opacity:.8;transform:translateY(-15%)}82%{opacity:.3}83%{opacity:.7;transform:translateX(10%)}84%{opacity:.25}85%{opacity:.6}}
+@keyframes scan-roll{to{top:105%}}
+@media(min-width:1600px){.mascot-rig{max-width:433px}}
+@media(max-width:800px){.mascot-rig{max-width:287px}}
+@media(max-width:480px){.mascot-rig{max-width:237px}}
+@media(prefers-reduced-motion:reduce){.pumpkin-lit{opacity:1}.crt-screen:after{display:none}.screen-skull{opacity:.94}}
+
+
+@keyframes haunt{0%,100%{transform:translateY(0) rotate(-4deg)}50%{transform:translateY(-15px) rotate(1deg)}}

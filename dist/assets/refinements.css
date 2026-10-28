@@ -1,0 +1,51 @@
+/* One continuous night palette; bright paper survives only in small accents. */
+:root{--paper:#dcd6bf;--muted:#a8a68e}
+body{background:#191c15}
+.hero{background:radial-gradient(ellipse at 72% 54%,#3c2a1a55,transparent 50%),#191c15}
+.hero .hero-copy .button{background:var(--orange);box-shadow:5px 5px 0 #777f45}
+.paper,.orange{color:var(--paper)}
+.paper:before,.orange:before{display:none}
+.story{background:linear-gradient(180deg,#191c15,#22251b 45%,#191c15)}
+.story .lead span{color:#ee8a52}.story-copy>p:not(.lead){color:#b7b59e}.story .label:before,.orange .label:before{color:var(--orange)}
+.cast{background:#191c15}
+.cross-tape{background:#3c2b1d;color:#f09a62;border-color:#92664455;box-shadow:none}
+.intel{background:radial-gradient(ellipse at 55% 55%,#35291c66,transparent 70%),#1c2017;border-block:1px solid #9f8d5130}
+.intel .pinwheel{color:#b57a43}
+.facts .fact{background:#282c20;color:var(--paper);border:1px solid #62614470;box-shadow:none;transform:rotate(calc(var(--rot)/2));clip-path:polygon(0 0,100% 0,100% 98%,84% 100%,67% 98%,51% 100%,34% 98%,17% 100%,0 98%)}
+.facts .fact:nth-child(3){background:#303322;border-color:#a3a35b80}
+.facts .fact p:last-child{color:#aaa98f}.facts .fact .big{color:#ded6b8}.facts .fact:nth-child(3) .big{color:#c3cb80}
+.facts .fact:hover{transform:translateY(-3px) rotate(0)}
+.format-section{background:linear-gradient(180deg,#1c2017,#22261b 50%,#191c15)}
+.format-card{border-color:#696a4855}.format-card .big{color:#d8d3b8}.format-card:nth-child(2) .big{color:#dc9967}.format-card>p:last-child{color:#aaa98f}
+.days:before{border-color:#8e8b4e44}
+.ticket,.ticket:nth-child(2),.ticket:nth-child(3){background:#2b2f21;color:#d6d1b8;box-shadow:none;outline:1px solid #68694a50}
+.ticket:nth-child(2){background:#343020;color:#e4b47e}.ticket:nth-child(3){background:#292e20;color:#beca87}
+.support{background:#191c15;border-block:1px solid #7a76482b}
+.final{background:radial-gradient(ellipse at 50% 100%,#4a2c1b55,transparent 70%),#202219;color:var(--paper)}
+.final h2{color:#d9d3bb}.final h2 span{color:var(--orange)}.final-copy>p{color:#b6b39a}.final-bat{color:#b07143}.final-star{color:#7f873f}
+.final .button{color:#181b13;background:var(--orange);box-shadow:5px 5px 0 #606a39}.final .button:hover{background:#f18a4c;box-shadow:7px 8px 0 #606a39}
+footer{background:#191c15}
+/* Copy is visible even if enhancement scripts are delayed or blocked. */
+.js .reveal{opacity:1;transform:none}
+.motion-toggle{display:inline-flex;align-items:center;gap:8px;flex:none;border:1px solid #777e4d66;background:#25291c;color:#cbc8ad;padding:7px 9px;font:10px/1.2 var(--mono);text-transform:none;letter-spacing:0;cursor:pointer}
+.motion-toggle:before{content:'';display:block;width:6px;height:6px;border-radius:50%;background:#b3c46d;box-shadow:0 0 7px #a1b35a40}
+.motion-toggle[aria-pressed=false]:before{background:#777865;box-shadow:none}
+.mascot-fallback{position:absolute;inset:0;display:block;width:100%;height:100%;object-fit:contain;pointer-events:none}
+.mascot-rig:not(.art-ready) .rig-layer,.mascot-rig:not(.art-ready) .crt-screen{opacity:0!important}
+.mascot-rig.art-ready .mascot-fallback{display:none}
+.rig-layer>img{display:block;width:100%;height:100%;object-fit:contain}
+html[data-motion=off]{scroll-behavior:auto!important}
+html[data-motion=off] *,html[data-motion=off] *:before,html[data-motion=off] *:after{animation:none!important;transition:none!important}
+html[data-motion=off] .art-stage{transform:none!important}
+html[data-motion=on] .mascot-rig{animation:haunt 6s ease-in-out infinite!important}
+html[data-motion=on] .pumpkin-lit{animation:candle-light 8.3s steps(1,end) infinite!important}
+html[data-motion=on] .screen-skull{animation:crt-skull 11.7s steps(1,end) infinite!important}
+html[data-motion=on] .crt-screen:after{display:block;animation:crt-static 11.7s steps(1,end) infinite!important}
+html[data-motion=on] .scan-beam{animation:scan-roll 4.8s linear infinite!important}
+html[data-motion=on] .bat{animation:bat-drift 8s ease-in-out infinite!important}
+html[data-motion=on] .spider-wrap{animation:spider-sway 9s ease-in-out infinite!important}
+html[data-motion=on] .story .story-ghost{animation:ghost-roam 28s ease-in-out infinite!important}
+html[data-motion=on] .pinwheel,html[data-motion=on] .final-star{animation:slow-spin 28s linear infinite!important}
+html[data-motion=on] .marquee-track{animation:marquee 36s linear infinite!important}
+@media(max-width:800px){.motion-toggle{padding:7px 8px;font-size:9px}.top-right{gap:10px}.facts .fact{padding:30px 21px}.story-copy .lead{color:#d7d1b9}}
+@media(max-width:480px){.motion-toggle{font-size:8px;padding:6px}.top-right{gap:7px}.top .edition-mark{font-size:27px}.brand{max-width:185px;font-size:8px}.brand-mark{width:27px;height:27px}.facts .fact{padding-inline:15px}.fact .big{font-size:27px}}
